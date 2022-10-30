@@ -6,7 +6,7 @@ import datetime
 import wikipedia
 import pywhatkit
 #criar um reconhecedor
-model=Model(r'D:\Users\Andrei\Desktop\projeto assistente\Model')
+model=Model('Model')
 recognizer=KaldiRecognizer(model,16000)
 audio=KaldiRecognizer.Recognizer()
 #audio=sr.Recognizer()
