@@ -18,23 +18,23 @@ maquina.runAndWait()
 def excuta_comando():
     
         #abri meicrofone para captura
-        with KaldiRecognizer.Microphone() as source:
-       # with sr.Microphone() as source:
-        while True:
-                 print('Ouvindo...')
-                 voz = audio.listen(source)
+        #with KaldiRecognizer.Microphone() as source:
+        with sr.Microphone() as source:
+            while True:
+                        print('Ouvindo...')
+                        voz = audio.listen(source)
 
-                 try:
-                     comando=audio.recognize_google(voz, language='pt-BR')
-                     comando=comando.lower()
-                 if'sexta feira' in comando:       
-                         comando=comando.replace('sexta feira','')
-                         maquina.say(comando )
-                         maquina.runAndWait()
-                 except
-                 print('microfone não esta ok')   
+                        try:
+                            comando=audio.recognize_google(voz, language='pt-BR')
+                            comando=comando.lower()
+                            if'sexta feira' in comando:       
+                                    comando=comando.replace('sexta feira','')
+                                    maquina.say(comando )
+                                    maquina.runAndWait()
+                        except:
+                            print('microfone não esta ok')   
 
-                 return comando 
+                        return comando  
 
 def comando_voz_usuario():
        comando =excuta_comando()
